@@ -3,7 +3,7 @@
 }
 
 .calculator {
-  margin: auto;
+  margin: 150px auto;
   width: 250px;
   height: 400px;
   border: 1px solid black;
@@ -12,11 +12,53 @@
 .results {
   width: 100%;
   height: 20%;
-  border: 1px solid black;
 }
 
 .inputs {
   width: 100%;
   height: 80%;
-  border: 1px solid black;
+}
+
+.row1 {
+  display: flex;
+}
+
+.row2 {
+  display: flex;
+}
+
+.row3 {
+  display: flex;
+}
+
+.row4 {
+  display: flex;
+}
+
+.row5 {
+  display: flex;
+}
+
+.button_calc {
+  width: 62.5px;
+  height: 62.5px;
+}
+
+.zero {
+  width: 125px;
+}
+
+.results {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inputedValue {
+  width: 80%;
+}
+
+.currentValue {
+  width: 20%;
+  text-align: center;
 }
