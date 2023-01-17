@@ -10,10 +10,10 @@ export const Calculator = () => {
         let stringExp = inputedArr.join('');
 
         if (stringExp.includes('.')) {
-            console.log('this variant')
+            setCurrentValue((eval(stringExp)).toFixed(2));
+        } else {
+            setCurrentValue(eval(stringExp))
         }
-
-        setCurrentValue(eval(stringExp))
     }
 
     const allClear = () => {
