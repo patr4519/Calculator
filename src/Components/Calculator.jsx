@@ -7,12 +7,22 @@ export const Calculator = () => {
     const [inputedArr, setInputedArr] = React.useState([]);
 
     const calculate = () => {
-        setCurrentValue(eval(inputedArr.join('')))
+        let stringExp = inputedArr.join('');
+
+        if (stringExp.includes('.')) {
+            console.log('this variant')
+        }
+
+        setCurrentValue(eval(stringExp))
     }
 
     const allClear = () => {
         setCurrentValue(0);
         setInputedArr([]);
+    }
+
+    const del = () => {
+        setInputedArr((prev) => prev.slice(0, inputedArr.length - 1))
     }
 
     return (
@@ -24,7 +34,8 @@ export const Calculator = () => {
             <Inputs
                 setInputedArr={setInputedArr}
                 calculate={calculate}
-                allClear={allClear} />
+                allClear={allClear}
+                del={del} />
         </div>
     );
 }

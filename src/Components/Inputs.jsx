@@ -1,12 +1,12 @@
 import React from "react";
 
-export const Inputs = ({ setInputedArr, calculate, allClear }) => {
+export const Inputs = ({ setInputedArr, calculate, allClear, del }) => {
 
     return (
         <div className="inputs">
             <div className="row1">
                 <button className="button_calc" onClick={allClear}>AC</button>
-                <button className="button_calc">Del</button>
+                <button className="button_calc" onClick={del}>Del</button>
                 <button className="button_calc" onClick={() => setInputedArr((prev) => [...prev, '%'])}>%</button>
                 <button className="button_calc" onClick={() => setInputedArr((prev) => [...prev, '/'])}>/</button>
             </div>
