@@ -82,6 +82,8 @@ export const Calculator = () => {
             case 'Delete':
                 allClear();
                 break;
+            default: 
+                break;
         }
     }
 
