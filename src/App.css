@@ -52,6 +52,12 @@ body {
   height: 86px;
 }
 
+.plug {
+  background-color: #383838;
+  width: 100%;
+  height: 86px;
+}
+
 .column {
   display: flex;
   flex-direction: column;

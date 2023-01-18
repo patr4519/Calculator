@@ -1,10 +1,12 @@
 import React from "react";
 import { Results } from "./Results";
 import { Inputs } from "./Inputs";
+import { Plug } from "./Plug";
 
 export const Calculator = () => {
     const [currentValue, setCurrentValue] = React.useState(0);
     const [inputedArr, setInputedArr] = React.useState([]);
+    const [enabled, setEnabled] = React.useState(false);
 
     const calculate = () => {
         let stringExp = inputedArr.join('');
@@ -87,17 +89,24 @@ export const Calculator = () => {
         }
     }
 
+    const toggleOnOff = () => {
+        setEnabled(!enabled);
+    }
+
     return (
         <div className="calculator" onKeyDown={handleKey}>
-            <Results
+            {
+                enabled ? <Results
                 currentValue={currentValue}
-                inputedValue={inputedArr} />
+                inputedValue={inputedArr} /> : <Plug />
+            }
 
             <Inputs
                 setInputedArr={setInputedArr}
                 calculate={calculate}
                 allClear={allClear}
-                del={del} />
+                del={del}
+                toggleOnOff={toggleOnOff} />
         </div>
     );
 }
