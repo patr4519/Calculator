@@ -72,8 +72,8 @@ export const Calculator = () => {
             case '.':
                 setInputedArr((prev) => [...prev, '.']);
                 break;
-            // handle preventDefault method (when focused on button)
             case 'Enter':
+                e.preventDefault()
                 calculate();
                 break;
             case 'Backspace':
