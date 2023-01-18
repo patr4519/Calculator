@@ -5,9 +5,7 @@ export const Inputs = ({ setInputedArr, calculate, allClear, del, toggleOnOff })
     return (
         <div className="inputs">
             <div className="row1">
-                <div className="toggleOnOff">
-                    <button className="button_calc onOff grey" onClick={toggleOnOff}>On/Off</button>
-                </div>
+                <button className="button_calc onOff grey" onClick={toggleOnOff}>On/Off</button>
                 <button className="button_calc grey" onClick={allClear}>AC</button>
                 <button className="button_calc grey" onClick={del}>Del</button>
                 <button className="button_calc orange" onClick={() => setInputedArr((prev) => [...prev, '/'])}>/</button>

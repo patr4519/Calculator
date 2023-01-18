@@ -27,6 +27,11 @@ export const Calculator = () => {
         setInputedArr((prev) => prev.slice(0, inputedArr.length - 1))
     }
 
+    const toggleOnOff = () => {
+        setEnabled(!enabled);
+        allClear();
+    }
+
     const handleKey = (e) => {
         switch (e.key) {
             case '0':
@@ -87,10 +92,6 @@ export const Calculator = () => {
             default: 
                 break;
         }
-    }
-
-    const toggleOnOff = () => {
-        setEnabled(!enabled);
     }
 
     return (
