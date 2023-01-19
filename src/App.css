@@ -63,12 +63,25 @@ header {
 /* ---------------- header ---------------- */
 
 .calculator {
+  position: relative;
   margin: auto;
   margin-top: 100px;
   margin-bottom: 400px;
   width: 250px;
   height: 400px;
   border: 1px solid black;
+}
+
+.error {
+  background-color: #be3144;
+  width: 248px;
+  height: 86px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  padding-top: 20px;
+  padding-left: 2px;
 }
 
 .row1 {

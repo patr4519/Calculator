@@ -2,25 +2,32 @@ import React from "react";
 import { Results } from "./Results";
 import { Inputs } from "./Inputs";
 import { Plug } from "./Plug";
+import { Error } from "./Error";
 
 export const Calculator = () => {
     const [currentValue, setCurrentValue] = React.useState(0);
     const [inputedArr, setInputedArr] = React.useState([]);
     const [enabled, setEnabled] = React.useState(false);
+    const [error, setError] = React.useState(false);
 
     const calculate = () => {
         let stringExp = inputedArr.join('');
 
-        if (stringExp.includes('.')) {
-            setCurrentValue((eval(stringExp)).toFixed(2));
-        } else {
-            setCurrentValue(eval(stringExp))
+        try {
+            if (stringExp.includes('.')) {
+                setCurrentValue((eval(stringExp)).toFixed(2));
+            } else {
+                setCurrentValue(eval(stringExp))
+            }
+        } catch (err) {
+            setError(true);
         }
     }
 
     const allClear = () => {
         setCurrentValue(0);
         setInputedArr([]);
+        setError(false);
     }
 
     const del = () => {
@@ -30,6 +37,7 @@ export const Calculator = () => {
     const toggleOnOff = () => {
         setEnabled(!enabled);
         allClear();
+        setError(false);
     }
 
     const handleKey = (e) => {
@@ -100,6 +108,10 @@ export const Calculator = () => {
                 enabled ? <Results
                 currentValue={currentValue}
                 inputedValue={inputedArr} /> : <Plug />
+            }
+
+            {
+                error && <Error />
             }
 
             <Inputs
